@@ -1,17 +1,19 @@
 package com.company;
 
-public class Dish extends Establishment {
+import java.util.List;
+
+public class Dish {
     private String dishName;
     private String descriptionE;
     private String price;
+    private List<String> ingredients;
 
-    public Dish(String fullname, String phone, String email, String password, String image, String nip, String name, String description, String adress, String contacts,
-                String[] imgList, int workHours, double rating,
-                String dishName, String descriptionE,String price) {
-        super(fullname, phone, email, password, image, nip, name, description, adress, contacts, imgList, workHours, rating);
-        dishName = this.dishName;
-        descriptionE = this.descriptionE;
-        price = this.price;
+    public Dish(String dishName, String descriptionE,String price,List<String> ingredients) {
+
+        this.dishName = dishName;
+        this.descriptionE = descriptionE;
+        this.price = price;
+        this.ingredients=ingredients;
     }
 
     public String getDishName(){
@@ -34,4 +36,12 @@ public class Dish extends Establishment {
     public void setPrice(String Pr){
         price = Pr;
     }
+
+    public List<String> getIngredients() {
+        return ingredients;
     }
+
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+}

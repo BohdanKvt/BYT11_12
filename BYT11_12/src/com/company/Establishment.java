@@ -3,23 +3,26 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Establishment extends EstablishmentAdmin{
+public class Establishment {
+    private int establishmentId;
     private String name,description,adress,contacts;
     private String[] imagelist;
     private int workHours;
     private double rating;
+    private List<Table> ourtables;
 
-    public Establishment(String fullname, String phone, String email, String password, String image,String nip,
-                         String name,String description,String adress, String contacts,String[]imgList,
-                         int workHours,double rating) {
-        super(fullname, phone, email, password, image,nip);
-        name = this.name;
-        description = this.description;
-        adress = this.adress;
-        contacts = this.contacts;
-        imgList = this.imagelist;
-        workHours = this.workHours;
-        rating = this.rating;
+
+    public Establishment(int id,String name,String description,String adress, String contacts,String[]imgList,
+                         int workHours,double rating,List<Table> ourtables) {
+        this.establishmentId=id;
+        this.name = name;
+        this.description = description;
+        this.adress = adress;
+        this.contacts = contacts;
+        this.imagelist = imgList;
+        this.workHours = workHours;
+        this.rating = rating;
+        this.ourtables=ourtables;
     }
 
     public String getE_Name(){
@@ -67,5 +70,21 @@ public class Establishment extends EstablishmentAdmin{
 
     public double getRating(){
         return rating;
+    }
+
+    public List<Table> getOurtables() {
+        return ourtables;
+    }
+
+    public void setOurtables(List<Table> ourtables) {
+        this.ourtables = ourtables;
+    }
+
+    public int getEstablishmentId() {
+        return establishmentId;
+    }
+
+    public void setEstablishmentId(int establishmentId) {
+        this.establishmentId = establishmentId;
     }
 }

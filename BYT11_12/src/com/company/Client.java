@@ -2,9 +2,12 @@ package com.company;
 
 public class Client extends User {
    private String CardInfo;
-    public Client(String fullname, String phone, String email, String password, String image,String NIP,String CardInfo) {
+   private int idClient;
+
+    public Client(int id, String fullname, String phone, String email, String password, String image, String NIP, String CardInfo) {
         super(fullname, phone, email, password, image);
-        CardInfo = this.CardInfo;
+        this.CardInfo = CardInfo;
+        idClient=id;
 
     }
     public String getCardInfo(){
@@ -12,6 +15,14 @@ public class Client extends User {
     }
     public void setCardInfo(String cardInf){
       CardInfo = cardInf;
+    }
+
+    public int getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
     }
     public void BookTable(){
 

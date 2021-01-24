@@ -1,10 +1,16 @@
 package com.company;
 
-public class Table extends Establishment {
+public class Table   {
+
+    private int TableId;
 private int NUmber;
 private int numberOfSeats;
 private String[] status= {"blocked","avaliable"};
-enum TabLoc{
+private TabLoc loc;
+
+
+
+    enum TabLoc{
     NearWindow,
     InTheWindow,
     Other
@@ -12,11 +18,19 @@ enum TabLoc{
     private String TabLocDescription;
 
 
-    public Table(String fullname, String phone, String email, String password, String image, String nip, String name, String description, String adress, String contacts, String[] imgList, int workHours, double rating,
-                 int NUmber,int numberOfSeats) {
-        super(fullname, phone, email, password, image, nip, name, description, adress, contacts, imgList, workHours, rating);
-        NUmber = this.NUmber;
-        numberOfSeats = this.numberOfSeats;
+    public Table(int NUmber,int numberOfSeats,int id,TabLoc loc) {
+        this.NUmber = NUmber;
+        this.numberOfSeats = numberOfSeats;
+        TableId=id;
+        this.loc=loc;
+    }
+    public Table(int tableId, int NUmber, int numberOfSeats, String[] status, TabLoc loc, String tabLocDescription) {
+        TableId = tableId;
+        this.NUmber = NUmber;
+        this.numberOfSeats = numberOfSeats;
+        this.status = status;
+        this.loc = loc;
+        TabLocDescription = tabLocDescription;
     }
     public int getNUmber(){
         return NUmber;
@@ -32,4 +46,14 @@ enum TabLoc{
         numberOfSeats = nuOfSeats;
     }
 
+
+    public int getTableId() { return TableId; }
+    public void setTableId(int tableId) { TableId = tableId; }
+
+    public TabLoc getLoc() { return loc; }
+    public void setLoc(TabLoc loc) { this.loc = loc; }
+
+    public String getTabLocDescription() { return TabLocDescription; }
+
+    public void setTabLocDescription(String tabLocDescription) { TabLocDescription = tabLocDescription; }
 }
