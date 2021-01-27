@@ -13,31 +13,31 @@ public class EstablishmentAdmin extends User {
         this.establishments = new ArrayList<>();
     }
 
-    public String getNip(){
+    public String getNip() {
         return this.NIP;
     }
 
-    public void setNip(String NIP){
+    public void setNip(String NIP) {
         this.NIP = NIP;
     }
 
-    public void registerNewEstablishment(Establishment establishments){
+    public void registerNewEstablishment(Establishment establishments) {
         this.establishments.add(establishments);
     }
 
-    public void AddMenu(){
+    public void AddMenu() {
 
     }
 
-    public void UpdateMenu(){
+    public void UpdateMenu() {
 
     }
 
-    public void DeleteEstablishment(){
+    public void DeleteEstablishment() {
 
     }
 
-    public void EditTables(){
+    public void EditTables() {
 
     }
 }

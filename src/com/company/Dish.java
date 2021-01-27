@@ -3,6 +3,7 @@ package com.company;
 import java.util.List;
 
 public class Dish {
+
     private String dishName;
     private String description;
     private String price;
@@ -15,24 +16,24 @@ public class Dish {
         this.ingredients = ingredients;
     }
 
-    public String getDishName(){
+    public String getDishName() {
         return dishName;
     }
-    public void setDishName(String dishName){
+    public void setDishName(String dishName) {
         this.dishName = dishName;
     }
 
     public String getDescription(){
         return description;
     }
-    public void setDescription(String description){
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getPrice(){
+    public String getPrice() {
         return price;
     }
-    public void setPrice(String price){
+    public void setPrice(String price) {
         this.price = price;
     }
 

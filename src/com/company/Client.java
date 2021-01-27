@@ -10,31 +10,31 @@ public class Client extends User {
 
     }
 
-    public String[] getCardInfo(){
+    public String[] getCardInfo() {
         return this.cardInfo;
     }
 
-    public void setCardInfo(String[] cardInfo){
+    public void setCardInfo(String[] cardInfo) {
       this.cardInfo = cardInfo;
     }
 
-    public void BookTable(){
+    public void BookTable() {
 
     }
 
-    public void MakeOrder(){
+    public void MakeOrder() {
 
     }
 
-    public void SelectEstablishment(){
+    public void SelectEstablishment() {
 
     }
 
-    public void LeaveAReview(){
+    public void LeaveAReview() {
 
     }
 
-    public void CalculateHowManyTimesOrdered(){
+    public void CalculateHowManyTimesOrdered() {
 
     }
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Table   {
+public class Table {
 
     private int id;
     private int numberOfSeats;
@@ -8,23 +8,24 @@ public class Table   {
     private TableLocationEnum location;
     private String tableDescription;
 
-    enum TableLocationEnum{
+    public enum TableLocationEnum{
         nearWindow,
         inTheMiddle
     }
-    enum StatusTypeEnum{
+
+    public enum StatusTypeEnum{
         blocked,
         available
     }
 
-    public Table(int id,int numberOfSeats,TableLocationEnum location) {
+    public Table(int id, int numberOfSeats, TableLocationEnum location) {
         this.id = id;
         this.numberOfSeats = numberOfSeats;
         this.location = location;
         this.status = StatusTypeEnum.available;
     }
 
-    public Table(int id,int numberOfSeats,TableLocationEnum location,String tableDescription) {
+    public Table(int id, int numberOfSeats, TableLocationEnum location, String tableDescription) {
         this.id = id;
         this.numberOfSeats = numberOfSeats;
         this.location = location;

@@ -14,7 +14,8 @@ public class Booking {
     private int adminId;
     private Status statusOfBooking;
 
-    public Booking(int id, List<Dish> orderedDishes, LocalDateTime time, int visitors, int clientId, int establishmentId, int adminId) {
+    public Booking(int id, List<Dish> orderedDishes, LocalDateTime time, int visitors, int clientId,
+                   int establishmentId, int adminId) {
         this.id = id;
         this.orderedDishes = orderedDishes;
         this.time = time;
