@@ -25,6 +25,7 @@ public abstract class User {
     public String getFullName(){
         return this.fullname;
     }
+
     public void SetFullName(String newName){
         this.fullname = newName;
     }

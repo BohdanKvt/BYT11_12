@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Booking {
+
     private int id;
     private List<Dish> orderedDishes;
     private LocalDateTime time;
