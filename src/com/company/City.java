@@ -1,6 +1,7 @@
 package com.company;
 
 public class City {
+
     private String name;
     private String country;
 

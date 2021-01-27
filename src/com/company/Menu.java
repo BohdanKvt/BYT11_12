@@ -1,23 +1,19 @@
 package com.company;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class Menu {
-    private List<Dish> mydishes;
-    private LocalDateTime lastUpdate;
+    private List<Dish> dishes;
 
-    public Menu(List<Dish> mydishes) {
-        this.mydishes = mydishes;
-        lastUpdate=LocalDateTime.now();
+    public Menu(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 
-    public List<Dish> getMydishes() {
-        return mydishes;
+    public List<Dish> getDishes() {
+        return dishes;
     }
 
-    public void setMydishes(List<Dish> mydishes) {
-        this.mydishes = mydishes;
-        lastUpdate=LocalDateTime.now();
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 }
