@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Establishment {
-    private int establishmentId;
     private String name,description,adress,contacts;
     private String[] imagelist;
     private int workHours;
@@ -12,9 +11,8 @@ public class Establishment {
     private List<Table> ourtables;
 
 
-    public Establishment(int id,String name,String description,String adress, String contacts,String[]imgList,
+    public Establishment(String name,String description,String adress, String contacts,String[]imgList,
                          int workHours,double rating,List<Table> ourtables) {
-        this.establishmentId=id;
         this.name = name;
         this.description = description;
         this.adress = adress;
@@ -80,11 +78,4 @@ public class Establishment {
         this.ourtables = ourtables;
     }
 
-    public int getEstablishmentId() {
-        return establishmentId;
-    }
-
-    public void setEstablishmentId(int establishmentId) {
-        this.establishmentId = establishmentId;
-    }
 }
