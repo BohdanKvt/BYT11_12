@@ -1,32 +1,27 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class EstablishmentAdmin extends User {
-    private int adminId;
-    private String nip;
-    private Establishment myestablishment;
-    public EstablishmentAdmin(int id,String fullname, String phone, String email, String password, String image,String Nip,Establishment myestablishment) {
+    private String NIP;
+    private ArrayList<Establishment> establisments = new ArrayList<>();
+    public EstablishmentAdmin(String fullname, String phone, String email, String password, String image,String NIP) {
         super(fullname, phone, email, password, image);
-        Nip = nip;
-        this.myestablishment=myestablishment;
-        adminId=id;
+        this.NIP = NIP;
+
     }
 
     public String getNip(){
-        return nip;
+        return this.NIP;
     }
-    public void setNip(String NIP){
-        nip = NIP;
-    }
-    public void RegisterNewEstablishment(){
-
-    }
-    public int getAdminId() {
-        return adminId;
+    public void setNip(String newNIP){
+        this.NIP = newNIP;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void registerNewEstablishment(Establishment newEstablishment){
+        this.establisments.add(newEstablishment);
     }
+
     public void AddMenu(){
 
     }
