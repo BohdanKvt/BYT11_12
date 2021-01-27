@@ -4,37 +4,36 @@ import java.util.List;
 
 public class Dish {
     private String dishName;
-    private String descriptionE;
+    private String description;
     private String price;
     private List<String> ingredients;
 
-    public Dish(String dishName, String descriptionE,String price,List<String> ingredients) {
-
+    public Dish(String dishName, String description, String price, List<String> ingredients) {
         this.dishName = dishName;
-        this.descriptionE = descriptionE;
+        this.description = description;
         this.price = price;
-        this.ingredients=ingredients;
+        this.ingredients = ingredients;
     }
 
     public String getDishName(){
         return dishName;
     }
-    public void setDishName(String Dname){
-        dishName = Dname;
+    public void setDishName(String dishName){
+        this.dishName = dishName;
     }
 
-    public String getDescriptionE(){
-        return descriptionE;
+    public String getDescription(){
+        return description;
     }
-    public void setDescriptionE(String Desc){
-        descriptionE = Desc;
+    public void setDescription(String description){
+        this.description = description;
     }
 
     public String getPrice(){
         return price;
     }
-    public void setPrice(String Pr){
-        price = Pr;
+    public void setPrice(String price){
+        this.price = price;
     }
 
     public List<String> getIngredients() {

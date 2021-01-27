@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Establishment {
-    private String name,description,adress,contacts;
+    private String name, description, adress, contacts;
     private String[] imagelist;
     private int workHours;
     private double rating;

@@ -1,6 +1,7 @@
 package com.company;
 
 public class Client extends User {
+
    private String[] cardInfo;
 
     public Client(String fullname, String phone, String email, String password, String image, String[] cardInfo) {
@@ -8,26 +9,31 @@ public class Client extends User {
         this.cardInfo = cardInfo;
 
     }
+
     public String[] getCardInfo(){
         return this.cardInfo;
     }
-    public void setCardInfo(String[] newCardInfo){
-      this.cardInfo = newCardInfo;
-    }
 
+    public void setCardInfo(String[] cardInfo){
+      this.cardInfo = cardInfo;
+    }
 
     public void BookTable(){
 
     }
+
     public void MakeOrder(){
 
     }
+
     public void SelectEstablishment(){
 
     }
+
     public void LeaveAReview(){
 
     }
+
     public void CalculateHowManyTimesOrdered(){
 
     }

@@ -3,20 +3,18 @@ package com.company;
 public class Table   {
 
     private int TableId;
-private int NUmber;
-private int numberOfSeats;
-private String[] status= {"blocked","avaliable"};
-private TabLoc loc;
-
-
+    private int NUmber;
+    private int numberOfSeats;
+    private String[] status = {"blocked","avaliable"};
+    private TabLoc loc;
 
     enum TabLoc{
-    NearWindow,
-    InTheWindow,
-    Other
-}
-    private String TabLocDescription;
+        NearWindow,
+        InTheWindow,
+        Other
+    }
 
+    private String TabLocDescription;
 
     public Table(int NUmber,int numberOfSeats,int id,TabLoc loc) {
         this.NUmber = NUmber;
@@ -24,6 +22,7 @@ private TabLoc loc;
         TableId=id;
         this.loc=loc;
     }
+
     public Table(int tableId, int NUmber, int numberOfSeats, String[] status, TabLoc loc, String tabLocDescription) {
         TableId = tableId;
         this.NUmber = NUmber;
@@ -32,6 +31,7 @@ private TabLoc loc;
         this.loc = loc;
         TabLocDescription = tabLocDescription;
     }
+
     public int getNUmber(){
         return NUmber;
     }
