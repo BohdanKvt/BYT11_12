@@ -5,33 +5,20 @@ import java.util.List;
 
 public class Booking {
 
-    private int id;
     private List<Dish> orderedDishes;
     private LocalDateTime time;
     private int visitors;
-    private int clientId;
-    private int establishmentId;
-    private int adminId;
+    private Client client;
+    private Table table;
     private Status statusOfBooking;
 
-    public Booking(int id, List<Dish> orderedDishes, LocalDateTime time, int visitors, int clientId,
-                   int establishmentId, int adminId) {
-        this.id = id;
+    public Booking(List<Dish> orderedDishes, LocalDateTime time, int visitors, Client client, Table table) {
         this.orderedDishes = orderedDishes;
         this.time = time;
         this.visitors = visitors;
-        this.clientId = clientId;
-        this.establishmentId = establishmentId;
-        this.adminId = adminId;
+        this.client = client;
+        this.table = table;
         this.statusOfBooking = Status.Made;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public List<Dish> getOrderedDishes() {
@@ -58,28 +45,20 @@ public class Booking {
         this.visitors = visitors;
     }
 
-    public int getClientId() {
-        return clientId;
+    public Client getClient() {
+        return client;
     }
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
-    public int getEstablishmentId() {
-        return establishmentId;
+    public Table getTable() {
+        return table;
     }
 
-    public void setEstablishmentId(int establishmentId) {
-        this.establishmentId = establishmentId;
-    }
-
-    public int getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void setTable(Table table) {
+        this.table = table;
     }
 
     public Status getStatusOfBooking() {
