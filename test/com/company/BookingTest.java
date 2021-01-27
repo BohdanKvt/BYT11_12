@@ -1,204 +1,128 @@
 package com.company;
 
-import org.junit.Test; 
+import javafx.scene.control.Tab;
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
 
-/** 
-* Booking Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
-public class BookingTest { 
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class BookingTest {
+    Client clientA;
+    Client clientB;
+    Table tableA;
+    Table tableB;
+    Booking bookingA;
+    List<Dish> orderedDishesA;
+    List<Dish> orderedDishesB;
+    LocalDateTime localDateTimeA;
+    LocalDateTime localDateTimeB;
+
 
 @Before
-public void before() throws Exception { 
-} 
+public void before() throws Exception {
+    clientA = new Client("Jhon Doe","555-555-0","doe@gmail.com",
+            "pass","img",new String[]{"4444","29/20","333"});
+    clientA = new Client("Alex Brown","555-555-0","doe@gmail.com",
+            "pass","img",new String[]{"4444","29/20","333"});
 
-@After
-public void after() throws Exception { 
-} 
+    tableA = new Table(12,4, Table.TableLocationEnum.inTheMiddle);
+    tableB = new Table(13,5, Table.TableLocationEnum.nearWindow);
 
-/** 
-* 
-* Method: CalculateTotalPrice() 
-* 
-*/ 
+    localDateTimeA = LocalDateTime.of(2019, 03, 28, 14, 33, 48, 123456789);
+    localDateTimeB = LocalDateTime.of(2020, 03, 28, 14, 33, 48, 123456789);
+
+    List<String> ingredients = new ArrayList<>();
+    orderedDishesA.add(new Dish("Pizza","desc","12.00",ingredients));
+    orderedDishesB.add(new Dish("Cake","desc","12.00",ingredients));
+
+    bookingA = new Booking(orderedDishesA,localDateTimeA,4,clientA,tableA);
+}
+
+
 @Test
-public void testCalculateTotalPrice() throws Exception { 
-//TODO: Test goes here... 
-} 
+public void testGetOrderedDishes() throws Exception {
+    Assert.assertEquals(bookingA.getOrderedDishes().get(0).getDishName(),"Pizza");
+}
 
-/** 
-* 
-* Method: CalculateNumberOfDishes() 
-* 
-*/ 
-@Test
-public void testCalculateNumberOfDishes() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: getOrderedDishes() 
-* 
-*/ 
-@Test
-public void testGetOrderedDishes() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: setOrderedDishes(List<Dish> orderedDishes) 
-* 
-*/ 
 @Test
 public void testSetOrderedDishes() throws Exception { 
-//TODO: Test goes here... 
+    bookingA.setOrderedDishes(orderedDishesB);
+    Assert.assertEquals(bookingA.getOrderedDishes().get(0).getDishName(),"Cake");
 } 
 
-/** 
-* 
-* Method: getTime() 
-* 
-*/ 
 @Test
 public void testGetTime() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(bookingA.getTime(),localDateTimeA);
 } 
 
-/** 
-* 
-* Method: setTime(LocalDateTime time) 
-* 
-*/ 
 @Test
 public void testSetTime() throws Exception { 
-//TODO: Test goes here... 
+    bookingA.setTime(localDateTimeB);
+    Assert.assertEquals(bookingA.getTime(),localDateTimeB);
 } 
 
-/** 
-* 
-* Method: getVisitors() 
-* 
-*/ 
 @Test
 public void testGetVisitors() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(bookingA.getVisitors(),4);
 } 
 
-/** 
-* 
-* Method: setVisitors(int visitors) 
-* 
-*/ 
+
 @Test
-public void testSetVisitors() throws Exception { 
-//TODO: Test goes here... 
+public void testSetVisitors() throws Exception {
+    bookingA.setVisitors(2);
+    Assert.assertEquals(bookingA.getVisitors(),2);
 } 
 
-/** 
-* 
-* Method: getClient() 
-* 
-*/ 
 @Test
 public void testGetClient() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(bookingA.getClient().getFullName(),"Jhon Doe");
 } 
 
-/** 
-* 
-* Method: setClient(Client client) 
-* 
-*/ 
+
 @Test
 public void testSetClient() throws Exception { 
-//TODO: Test goes here... 
+    bookingA.setClient(clientB);
+    Assert.assertEquals(bookingA.getClient().getFullName(),"Alex Brown");
 } 
 
-/** 
-* 
-* Method: getTable() 
-* 
-*/ 
 @Test
 public void testGetTable() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(bookingA.getTable().getId(),12);
 } 
 
-/** 
-* 
-* Method: setTable(Table table) 
-* 
-*/ 
 @Test
 public void testSetTable() throws Exception { 
-//TODO: Test goes here... 
+    bookingA.setTable(tableB);
+    Assert.assertEquals(bookingA.getTable().getId(),13);
 } 
 
-/** 
-* 
-* Method: getRejectionReason() 
-* 
-*/ 
 @Test
 public void testGetRejectionReason() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(bookingA.getRejectionReason(),"");
 } 
 
-/** 
-* 
-* Method: setRejectionReason(String rejectionReason) 
-* 
-*/ 
 @Test
 public void testSetRejectionReason() throws Exception { 
-//TODO: Test goes here... 
+  bookingA.setRejectionReason("123");
+  Assert.assertEquals(bookingA.getRejectionReason(),"123");
 } 
 
-/** 
-* 
-* Method: getStatusOfBooking() 
-* 
-*/ 
 @Test
 public void testGetStatusOfBooking() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(bookingA.getStatusOfBooking(), Booking.Status.Made);
+
 } 
 
-/** 
-* 
-* Method: setStatusOfBooking(Status statusOfBooking) 
-* 
-*/ 
 @Test
 public void testSetStatusOfBooking() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: values() 
-* 
-*/ 
-@Test
-public void testValues() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: valueOf(java.lang.String name) 
-* 
-*/ 
-@Test
-public void testValueOf() throws Exception { 
-//TODO: Test goes here... 
+    bookingA.setStatusOfBooking(Booking.Status.Confirmed);
+    Assert.assertEquals(bookingA.getStatusOfBooking(), Booking.Status.Confirmed);
 } 
 
 
