@@ -21,6 +21,21 @@ public class Booking {
         this.statusOfBooking = Status.Made;
     }
 
+    public enum Status {
+        Made,
+        Confirmed,
+        CancelledByCustomer,
+        CancelledByAdmin,
+        NotExecuted
+    }
+
+    public double CalculateTotalPrice(){
+        return 0.00;
+    }
+    public int CalculateNumberOfDishes(){
+        return 0;
+    }
+
     public List<Dish> getOrderedDishes() {
         return orderedDishes;
     }
@@ -69,11 +84,5 @@ public class Booking {
         this.statusOfBooking = statusOfBooking;
     }
 
-    public enum Status {
-        Made,
-        Confirmed,
-        CancelledByCustomer,
-        CancelledByAdmin,
-        NotExecuted
-    }
+
 }

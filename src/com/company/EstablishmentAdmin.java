@@ -40,4 +40,5 @@ public class EstablishmentAdmin extends User {
     public void EditTables() {
 
     }
+
 }
