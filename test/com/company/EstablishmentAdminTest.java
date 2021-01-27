@@ -1,115 +1,34 @@
 package com.company;
 
-import org.junit.Test; 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
-/** 
-* EstablishmentAdmin Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
-public class EstablishmentAdminTest { 
+public class EstablishmentAdminTest {
 
-@Before
-public void before() throws Exception { 
-} 
+    EstablishmentAdmin establishmentAdmin;
 
-@After
-public void after() throws Exception { 
-} 
+    @Before
+    public void before() throws Exception {
+        establishmentAdmin = new EstablishmentAdmin("Admin", "881241521", "qwerty@mail.com", "qwerty", "Test", "1234");
+    }
 
-/** 
-* 
-* Method: getNip() 
-* 
-*/ 
-@Test
-public void testGetNip() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @After
+    public void after() throws Exception {
 
-/** 
-* 
-* Method: setNip(String NIP) 
-* 
-*/ 
-@Test
-public void testSetNip() throws Exception { 
-//TODO: Test goes here... 
-} 
+    }
 
-/** 
-* 
-* Method: registerNewEstablishment(Establishment establishments) 
-* 
-*/ 
-@Test
-public void testRegisterNewEstablishment() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetNip() throws Exception {
+        Assert.assertEquals("1234", establishmentAdmin.getNip());
+    }
 
-/** 
-* 
-* Method: AddMenu() 
-* 
-*/ 
-@Test
-public void testAddMenu() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: UpdateMenu() 
-* 
-*/ 
-@Test
-public void testUpdateMenu() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: DeleteEstablishment() 
-* 
-*/ 
-@Test
-public void testDeleteEstablishment() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: EditTables() 
-* 
-*/ 
-@Test
-public void testEditTables() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: AcceptBooking() 
-* 
-*/ 
-@Test
-public void testAcceptBooking() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: RejectBooking() 
-* 
-*/ 
-@Test
-public void testRejectBooking() throws Exception { 
-//TODO: Test goes here... 
-} 
-
+    @Test
+    public void testSetNip() throws Exception {
+        establishmentAdmin.setNip("12345");
+        Assert.assertEquals("12345", establishmentAdmin.getNip());
+        establishmentAdmin.setNip("1234");
+    }
 
 } 

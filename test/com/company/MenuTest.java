@@ -1,45 +1,42 @@
 package com.company;
 
-import org.junit.Test; 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
 
-/** 
-* Menu Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MenuTest { 
 
-@Before
-public void before() throws Exception { 
-} 
+    Menu menu;
 
-@After
-public void after() throws Exception { 
-} 
+    @Before
+    public void before() throws Exception {
+        List<Dish> dishes = new ArrayList<>();
+        dishes.add(new Dish("test1", "test1", "123", new ArrayList<>()));
+        dishes.add(new Dish("test2", "test2", "123", new ArrayList<>()));
+        dishes.add(new Dish("test3", "test3", "123", new ArrayList<>()));
+        menu = new Menu(dishes);
+    }
 
-/** 
-* 
-* Method: getDishes() 
-* 
-*/ 
-@Test
-public void testGetDishes() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @After
+    public void after() throws Exception {
+    }
 
-/** 
-* 
-* Method: setDishes(List<Dish> dishes) 
-* 
-*/ 
-@Test
-public void testSetDishes() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetDishes() throws Exception {
+        Assert.assertEquals("test2", menu.getDishes().get(1).getDishName());
+    }
 
-
+    @Test
+    public void testSetDishes() throws Exception {
+        List<Dish> dishes = new ArrayList<>();
+        dishes.add(new Dish("test3", "test3", "123", new ArrayList<>()));
+        dishes.add(new Dish("test2", "test2", "123", new ArrayList<>()));
+        dishes.add(new Dish("test1", "test1", "123", new ArrayList<>()));
+        menu.setDishes(dishes);
+        Assert.assertEquals("test1", menu.getDishes().get(2).getDishName());
+    }
 } 

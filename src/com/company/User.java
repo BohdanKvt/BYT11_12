@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class User {
+public class User {
 
     private String fullname;
     private String phone;

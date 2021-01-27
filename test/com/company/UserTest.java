@@ -1,125 +1,81 @@
 package com.company;
 
-import org.junit.Test; 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
-/** 
-* User Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
-public class UserTest { 
+public class UserTest {
 
-@Before
-public void before() throws Exception { 
-} 
+    User user;
 
-@After
-public void after() throws Exception { 
-} 
+    @Before
+    public void before() throws Exception {
+        user = new User("User", "876125661", "qwerty@mail.com", "qwerty", "test");
+    }
 
-/** 
-* 
-* Method: getFullName() 
-* 
-*/ 
-@Test
-public void testGetFullName() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @After
+    public void after() throws Exception {
+    }
 
-/** 
-* 
-* Method: SetFullName(String fullname) 
-* 
-*/ 
-@Test
-public void testSetFullName() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetFullName() throws Exception {
+        Assert.assertEquals("User", user.getFullName());
+    }
 
-/** 
-* 
-* Method: getPhone() 
-* 
-*/ 
-@Test
-public void testGetPhone() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetFullName() throws Exception {
+        user.SetFullName("Usser");
+        Assert.assertEquals("Usser", user.getFullName());
+        user.SetFullName("User");
+    }
 
-/** 
-* 
-* Method: SetPhone(String phone) 
-* 
-*/ 
-@Test
-public void testSetPhone() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetPhone() throws Exception {
+        Assert.assertEquals("876125661", user.getPhone());
+    }
 
-/** 
-* 
-* Method: getEmail() 
-* 
-*/ 
-@Test
-public void testGetEmail() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetPhone() throws Exception {
+        user.SetPhone("876125662");
+        Assert.assertEquals("876125662", user.getPhone());
+        user.SetPhone("876125661");
+    }
 
-/** 
-* 
-* Method: setEmail(String email) 
-* 
-*/ 
-@Test
-public void testSetEmail() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetEmail() throws Exception {
+        Assert.assertEquals("qwerty@mail.com", user.getEmail());
+    }
 
-/** 
-* 
-* Method: getPassword() 
-* 
-*/ 
-@Test
-public void testGetPassword() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetEmail() throws Exception {
+        user.setEmail("qwerty@mail.pl");
+        Assert.assertEquals("qwerty@mail.pl", user.getEmail());
+        user.setEmail("qwerty@mail.com");
+    }
 
-/** 
-* 
-* Method: setPassword(String password) 
-* 
-*/ 
-@Test
-public void testSetPassword() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetPassword() throws Exception {
+        Assert.assertEquals("qwerty", user.getPassword());
+    }
 
-/** 
-* 
-* Method: getImage() 
-* 
-*/ 
-@Test
-public void testGetImage() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetPassword() throws Exception {
+        user.setPassword("12345");
+        Assert.assertEquals("12345", user.getPassword());
+        user.setPassword("qwerty");
+    }
 
-/** 
-* 
-* Method: setImage(String image) 
-* 
-*/ 
-@Test
-public void testSetImage() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetImage() throws Exception {
+        Assert.assertEquals("test", user.getImage());
+    }
 
+    @Test
+    public void testSetImage() throws Exception {
+        user.setImage("tesst");
+        Assert.assertEquals("tesst", user.getImage());
+        user.setImage("test");
+    }
 
 } 

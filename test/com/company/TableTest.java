@@ -1,145 +1,81 @@
 package com.company;
 
-import org.junit.Test; 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
-/** 
-* Table Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
 public class TableTest { 
 
-@Before
-public void before() throws Exception { 
-} 
+    Table table;
 
-@After
-public void after() throws Exception { 
-} 
+    @Before
+    public void before() throws Exception {
+        table = new Table(1, 4, Table.TableLocationEnum.inTheMiddle, "Good");
+    }
 
-/** 
-* 
-* Method: getId() 
-* 
-*/ 
-@Test
-public void testGetId() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @After
+    public void after() throws Exception {
+    }
 
-/** 
-* 
-* Method: setId(int id) 
-* 
-*/ 
-@Test
-public void testSetId() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetId() throws Exception {
+        Assert.assertEquals(1, table.getId());
+    }
 
-/** 
-* 
-* Method: getNumberOfSeats() 
-* 
-*/ 
-@Test
-public void testGetNumberOfSeats() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetId() throws Exception {
+        table.setId(2);
+        Assert.assertEquals(2, table.getId());
+        table.setId(1);
+    }
 
-/** 
-* 
-* Method: setNumberOfSeats(int numberOfSeats) 
-* 
-*/ 
-@Test
-public void testSetNumberOfSeats() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetNumberOfSeats() throws Exception {
+        Assert.assertEquals(4, table.getNumberOfSeats());
+    }
 
-/** 
-* 
-* Method: getStatus() 
-* 
-*/ 
-@Test
-public void testGetStatus() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetNumberOfSeats() throws Exception {
+        table.setNumberOfSeats(5);
+        Assert.assertEquals(5, table.getNumberOfSeats());
+        table.setNumberOfSeats(4);
+    }
 
-/** 
-* 
-* Method: setStatus(StatusTypeEnum status) 
-* 
-*/ 
-@Test
-public void testSetStatus() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetStatus() throws Exception {
+        Assert.assertEquals(Table.StatusTypeEnum.available, table.getStatus());
+    }
 
-/** 
-* 
-* Method: getLocation() 
-* 
-*/ 
-@Test
-public void testGetLocation() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetStatus() throws Exception {
+        table.setStatus(Table.StatusTypeEnum.blocked);
+        Assert.assertEquals(Table.StatusTypeEnum.blocked, table.getStatus());
+        table.setStatus(Table.StatusTypeEnum.available);
+    }
 
-/** 
-* 
-* Method: setLocation(TableLocationEnum location) 
-* 
-*/ 
-@Test
-public void testSetLocation() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetLocation() throws Exception {
+        Assert.assertEquals(Table.TableLocationEnum.inTheMiddle, table.getLocation());
+    }
 
-/** 
-* 
-* Method: getTableDescription() 
-* 
-*/ 
-@Test
-public void testGetTableDescription() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testSetLocation() throws Exception {
+        table.setLocation(Table.TableLocationEnum.nearWindow);
+        Assert.assertEquals(Table.TableLocationEnum.nearWindow, table.getLocation());
+        table.setLocation(Table.TableLocationEnum.inTheMiddle);
+    }
 
-/** 
-* 
-* Method: setTableDescription(String tableDescription) 
-* 
-*/ 
-@Test
-public void testSetTableDescription() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @Test
+    public void testGetTableDescription() throws Exception {
+        Assert.assertEquals("Good", table.getTableDescription());
+    }
 
-/** 
-* 
-* Method: values() 
-* 
-*/ 
-@Test
-public void testValues() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: valueOf(java.lang.String name) 
-* 
-*/ 
-@Test
-public void testValueOfName() throws Exception { 
-//TODO: Test goes here... 
-} 
-
+    @Test
+    public void testSetTableDescription() throws Exception {
+        table.setTableDescription("Bad");
+        Assert.assertEquals("Bad", table.getTableDescription());
+        table.setTableDescription("Good");
+    }
 
 } 
