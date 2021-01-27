@@ -41,8 +41,8 @@ public class Establishment {
     }
 
 
-    public void setAddress(String newAdress){
-        this.address = newAdress;
+    public void setAddress(String newAddress){
+        this.address = newAddress;
     }
     public String getAddress(){
         return this.address;

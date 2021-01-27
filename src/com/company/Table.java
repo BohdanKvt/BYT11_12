@@ -2,58 +2,75 @@ package com.company;
 
 public class Table   {
 
-    private int TableId;
-    private int NUmber;
+    private int id;
     private int numberOfSeats;
-    private String[] status = {"blocked","avaliable"};
-    private TabLoc loc;
+    private StatusTypeEnum status;
+    private TableLocationEnum location;
+    private String tableDescription;
 
-    enum TabLoc{
-        NearWindow,
-        InTheWindow,
-        Other
+    enum TableLocationEnum{
+        nearWindow,
+        inTheMiddle
+    }
+    enum StatusTypeEnum{
+        blocked,
+        available
     }
 
-    private String TabLocDescription;
-
-    public Table(int NUmber,int numberOfSeats,int id,TabLoc loc) {
-        this.NUmber = NUmber;
+    public Table(int id,int numberOfSeats,TableLocationEnum location) {
+        this.id = id;
         this.numberOfSeats = numberOfSeats;
-        TableId=id;
-        this.loc=loc;
+        this.location = location;
+        this.status = StatusTypeEnum.available;
     }
 
-    public Table(int tableId, int NUmber, int numberOfSeats, String[] status, TabLoc loc, String tabLocDescription) {
-        TableId = tableId;
-        this.NUmber = NUmber;
+    public Table(int id,int numberOfSeats,TableLocationEnum location,String tableDescription) {
+        this.id = id;
         this.numberOfSeats = numberOfSeats;
-        this.status = status;
-        this.loc = loc;
-        TabLocDescription = tabLocDescription;
+        this.location = location;
+        this.status = StatusTypeEnum.available;
+        this.tableDescription = tableDescription;
     }
 
-    public int getNUmber(){
-        return NUmber;
-    }
-    public void setNUmber(int nu){
-        NUmber = nu;
+    public int getId() {
+        return id;
     }
 
-    public int getNumberOfSeats(){
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getNumberOfSeats() {
         return numberOfSeats;
     }
-    public void setNumberOfSeats(int nuOfSeats){
-        numberOfSeats = nuOfSeats;
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
     }
 
+    public StatusTypeEnum getStatus() {
+        return status;
+    }
 
-    public int getTableId() { return TableId; }
-    public void setTableId(int tableId) { TableId = tableId; }
+    public void setStatus(StatusTypeEnum status) {
+        this.status = status;
+    }
 
-    public TabLoc getLoc() { return loc; }
-    public void setLoc(TabLoc loc) { this.loc = loc; }
+    public TableLocationEnum getLocation() {
+        return location;
+    }
 
-    public String getTabLocDescription() { return TabLocDescription; }
+    public void setLocation(TableLocationEnum location) {
+        this.location = location;
+    }
 
-    public void setTabLocDescription(String tabLocDescription) { TabLocDescription = tabLocDescription; }
+    public String getTableDescription() {
+        return tableDescription;
+    }
+
+    public void setTableDescription(String tableDescription) {
+        this.tableDescription = tableDescription;
+    }
+
 }
+
