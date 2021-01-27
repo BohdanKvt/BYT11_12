@@ -40,5 +40,7 @@ public class EstablishmentAdmin extends User {
     public void EditTables() {
 
     }
+    public void AcceptBooking(){}
+    public void RejectBooking(){}
 
 }

@@ -11,6 +11,7 @@ public class Booking {
     private Client client;
     private Table table;
     private Status statusOfBooking;
+    private String RejectionReason;
 
     public Booking(List<Dish> orderedDishes, LocalDateTime time, int visitors, Client client, Table table) {
         this.orderedDishes = orderedDishes;
@@ -74,6 +75,14 @@ public class Booking {
 
     public void setTable(Table table) {
         this.table = table;
+    }
+
+    public String getRejectionReason() {
+        return RejectionReason;
+    }
+
+    public void setRejectionReason(String rejectionReason) {
+        RejectionReason = rejectionReason;
     }
 
     public Status getStatusOfBooking() {
