@@ -1,13 +1,10 @@
 package com.company;
 
-import javafx.scene.control.Tab;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.Before; 
-import org.junit.After;
 
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +25,11 @@ public class BookingTest {
 public void before() throws Exception {
     clientA = new Client("Jhon Doe","555-555-0","doe@gmail.com",
             "pass","img",new String[]{"4444","29/20","333"});
-    clientA = new Client("Alex Brown","555-555-0","doe@gmail.com",
+    clientB = new Client("Alex Brown","555-555-0","doe@gmail.com",
             "pass","img",new String[]{"4444","29/20","333"});
+
+    orderedDishesA = new ArrayList<>();
+    orderedDishesB = new ArrayList<>();
 
     tableA = new Table(12,4, Table.TableLocationEnum.inTheMiddle);
     tableB = new Table(13,5, Table.TableLocationEnum.nearWindow);
@@ -89,7 +89,7 @@ public void testGetClient() throws Exception {
 public void testSetClient() throws Exception { 
     bookingA.setClient(clientB);
     Assert.assertEquals(bookingA.getClient().getFullName(),"Alex Brown");
-} 
+}
 
 @Test
 public void testGetTable() throws Exception { 

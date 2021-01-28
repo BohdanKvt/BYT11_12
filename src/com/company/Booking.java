@@ -11,13 +11,14 @@ public class Booking {
     private Client client;
     private Table table;
     private Status statusOfBooking;
-    private String RejectionReason;
+    private String rejectionReason;
 
     public Booking(LocalDateTime time, int visitors, Client client, Table table) {
         this.time = time;
         this.visitors = visitors;
         this.client = client;
         this.table = table;
+        this.rejectionReason = "";
         this.statusOfBooking = Status.Made;
     }
 
@@ -27,6 +28,7 @@ public class Booking {
         this.visitors = visitors;
         this.client = client;
         this.table = table;
+        this.rejectionReason = "";
         this.statusOfBooking = Status.Made;
     }
 
@@ -86,11 +88,11 @@ public class Booking {
     }
 
     public String getRejectionReason() {
-        return RejectionReason;
+        return rejectionReason;
     }
 
     public void setRejectionReason(String rejectionReason) {
-        RejectionReason = rejectionReason;
+        this.rejectionReason = rejectionReason;
     }
 
     public Status getStatusOfBooking() {
