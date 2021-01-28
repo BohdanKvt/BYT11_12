@@ -1,65 +1,43 @@
 package com.company;
 
-import org.junit.Test; 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
-/** 
-* City Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
-public class CityTest { 
+
+public class CityTest {
+    City city;
 
 @Before
-public void before() throws Exception { 
+public void before() throws Exception {
+    city = new City("Warsaw","Poland");
 } 
 
-@After
-public void after() throws Exception { 
-} 
 
-/** 
-* 
-* Method: getCountry() 
-* 
-*/ 
+
 @Test
-public void testGetCountry() throws Exception { 
-//TODO: Test goes here... 
+public void testGetCountry() throws Exception {
+    Assert.assertEquals(city.getCountry(),"Poland");
 } 
 
-/** 
-* 
-* Method: setCountry(String country) 
-* 
-*/ 
+
 @Test
 public void testSetCountry() throws Exception { 
-//TODO: Test goes here... 
+    city.setCountry("France");
+    Assert.assertEquals(city.getCountry(),"France");
 } 
 
-/** 
-* 
-* Method: getName() 
-* 
-*/ 
+
 @Test
 public void testGetName() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(city.getName(),"Warsaw");
 } 
 
-/** 
-* 
-* Method: setName(String name) 
-* 
-*/ 
 @Test
 public void testSetName() throws Exception { 
-//TODO: Test goes here... 
+    city.setName("Paris");
+    Assert.assertEquals(city.getName(),"Paris");
 } 
-
 
 } 

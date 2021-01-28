@@ -1,104 +1,69 @@
 package com.company;
 
-import org.junit.Test; 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
 
-/** 
-* Dish Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>Jan 27, 2021</pre> 
-* @version 1.0 
-*/ 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DishTest { 
+Dish dish;
+List<String> ingredientsA = new ArrayList<>();
+List<String> ingredientsB = new ArrayList<>();
+
 
 @Before
-public void before() throws Exception { 
+public void before() throws Exception {
+    dish = new Dish("Pizza","desc","12.00",ingredientsA);
 } 
 
-@After
-public void after() throws Exception { 
-} 
 
-/** 
-* 
-* Method: getDishName() 
-* 
-*/ 
+
+
 @Test
-public void testGetDishName() throws Exception { 
-//TODO: Test goes here... 
+public void testGetDishName() throws Exception {
+    Assert.assertEquals(dish.getDishName(),"Pizza");
 } 
 
-/** 
-* 
-* Method: setDishName(String dishName) 
-* 
-*/ 
 @Test
 public void testSetDishName() throws Exception { 
-//TODO: Test goes here... 
+    dish.setDishName("Cake");
+    Assert.assertEquals(dish.getDishName(),"Cake");
 } 
 
-/** 
-* 
-* Method: getDescription() 
-* 
-*/ 
 @Test
 public void testGetDescription() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(dish.getDescription(),"desc");
 } 
 
-/** 
-* 
-* Method: setDescription(String description) 
-* 
-*/ 
 @Test
 public void testSetDescription() throws Exception { 
-//TODO: Test goes here... 
+    dish.setDescription("desc2");
+    Assert.assertEquals(dish.getDescription(),"desc2");
 } 
 
-/** 
-* 
-* Method: getPrice() 
-* 
-*/ 
 @Test
 public void testGetPrice() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(dish.getPrice(),"12.00");
 } 
 
-/** 
-* 
-* Method: setPrice(String price) 
-* 
-*/ 
 @Test
-public void testSetPrice() throws Exception { 
-//TODO: Test goes here... 
+public void testSetPrice() throws Exception {
+    dish.setPrice("5.59");
+    Assert.assertEquals(dish.getPrice(),"5.59");
 } 
 
-/** 
-* 
-* Method: getIngredients() 
-* 
-*/ 
 @Test
 public void testGetIngredients() throws Exception { 
-//TODO: Test goes here... 
+    Assert.assertEquals(dish.getIngredients(),ingredientsA);
 } 
 
-/** 
-* 
-* Method: setIngredients(List<String> ingredients) 
-* 
-*/ 
 @Test
 public void testSetIngredients() throws Exception { 
-//TODO: Test goes here... 
+ dish.setIngredients(ingredientsB);
+ Assert.assertEquals(dish.getIngredients(),ingredientsB);
 } 
 
 

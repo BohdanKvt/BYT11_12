@@ -13,6 +13,14 @@ public class Booking {
     private Status statusOfBooking;
     private String RejectionReason;
 
+    public Booking(LocalDateTime time, int visitors, Client client, Table table) {
+        this.time = time;
+        this.visitors = visitors;
+        this.client = client;
+        this.table = table;
+        this.statusOfBooking = Status.Made;
+    }
+
     public Booking(List<Dish> orderedDishes, LocalDateTime time, int visitors, Client client, Table table) {
         this.orderedDishes = orderedDishes;
         this.time = time;
